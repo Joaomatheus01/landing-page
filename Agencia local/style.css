@@ -1,0 +1,381 @@
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 85px;
+}
+body {
+background: white;
+font-family: Georgia, serif;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+.pagina {
+width: 100%;
+max-width: none;
+margin: 0;
+padding: 0;
+background: white;
+}
+
+.menu {
+position: fixed;
+top: 20px;
+right: 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+padding: 12px 15px;
+background: rgba(0, 0, 0, 0.80);
+border-radius: 10px;
+z-index: 1000;
+}
+.menu a {
+color: white;
+text-decoration: none;
+font-family: Georgia, serif;
+font-size: 16px;
+white-space: nowrap;
+transition: 0.3s;
+padding: 10px 11px;
+border-radius: 6px;
+}
+.menu a:hover {
+background: #e6a743;
+color: #222;
+}
+
+body:has(#inicio:target) .menu a[href="#inicio"],
+body:has(#sobre:target) .menu a[href="#sobre"],
+body:has(#trabalhos:target) .menu a[href="#trabalhos"],
+body:has(#clientes:target) .menu a[href="#clientes"],
+body:has(#depoimentos:target) .menu a[href="#depoimentos"],
+body:has(#perguntas:target) .menu a[href="#perguntas"],
+body:has(#contato:target) .menu a[href="#contato"] {
+background: #e6a743;
+color: #222;
+}
+body:not(:has(:target)) .menu a[href="#inicio"] {
+background: #e6a743;
+color: #222;
+}
+
+header {
+position: relative;
+width: 100%;
+height: auto;
+overflow: hidden;
+margin: 0;
+padding: 0;
+}
+header > img {
+display: block;
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+h2 {
+text-align: center;
+font-size: 25px;
+font-weight: normal;
+margin-bottom: 35px;
+}
+
+.sobre {
+padding: 65px 12%;
+scroll-margin-top: 85px;
+}
+.sobre-caixa {
+max-width: 1100px;
+margin: auto;
+display: flex;
+align-items: center;
+gap: 35px;
+background: #f1f1f1;
+padding: 30px;
+}
+.sobre-caixa img {
+width: 180px;
+height: 150px;
+object-fit: contain;
+background: white;
+}
+.sobre-caixa p {
+font-size: 16px;
+line-height: 1.7;
+text-align: justify;
+}
+#trabalhos {
+width: 100%;
+overflow: hidden;
+scroll-margin-top: 85px;
+}
+.galeria {
+display: flex;
+width: 100%;
+height: 400px;
+gap: 0;
+}
+.foto {
+flex: 1;
+min-width: 0;
+height: 100%;
+overflow: hidden;
+transition: flex 0.5s ease;
+cursor: pointer;
+}
+.foto img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: 0.5s;
+}
+.foto:hover {
+flex: 3;
+}
+.foto:hover img {
+object-fit: contain;
+}
+
+.parcerias {
+padding: 70px 10%;
+scroll-margin-top: 85px;
+}
+.logos {
+display: flex;
+justify-content: space-around;
+align-items: center;
+max-width: 1200px;
+margin: auto;
+gap: 50px;
+}
+.logos img {
+width: 200px;
+height: auto;
+object-fit: contain;
+}
+
+.depoimentos {
+padding: 60px 10%;
+scroll-margin-top: 85px;
+}
+.depoimento-lista {
+display: flex;
+justify-content: center;
+gap: 40px;
+}
+.depoimento {
+width: 400px;
+min-height: 260px;
+background: #d28b32;
+border-radius: 10px;
+padding: 25px;
+text-align: center;
+color: white;
+}
+.depoimento img {
+width: 100px;
+height: 100px;
+object-fit: contain;
+margin-bottom: 15px;
+}
+.depoimento p {
+font-size: 14px;
+line-height: 1.6;
+}
+
+.perguntas {
+border-top: 1px solid #ddd;
+padding: 65px 20px;
+scroll-margin-top: 85px;
+}
+.perguntas h2 {
+font-size: 28px;
+}
+.perguntas details {
+max-width: 850px;
+margin: 12px auto;
+background: #dda65e;
+border-radius: 25px;
+overflow: hidden;
+}
+.perguntas summary {
+padding: 18px 25px;
+font-size: 16px;
+cursor: pointer;
+list-style: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.perguntas summary::-webkit-details-marker {
+display: none;
+}
+.perguntas summary::after {
+content: "+";
+font-size: 24px;
+}
+.perguntas details[open] summary::after {
+content: "−";
+}
+.perguntas details p {
+background: #e8c494;
+padding: 90px 30px;
+font-family: Arial, sans-serif;
+font-size: 15px;
+line-height: 1.7;
+}
+
+.contato {
+padding: 55px 15%;
+scroll-margin-top: 85px;
+}
+.mensagem {
+max-width: 1000px;
+height: 185px;
+margin: auto;
+background: #d9d9d9;
+border-radius: 10px;
+padding: 20px;
+position: relative;
+}
+.mensagem textarea {
+width: 100%;
+height: 100px;
+border: none;
+outline: none;
+resize: none;
+background: transparent;
+font-size: 15px;
+font-family: Georgia, serif;
+}
+
+.mensagem textarea:focus::placeholder {
+color: transparent;
+}
+
+.mensagem .adicionar {
+position: absolute;
+left: 20px;
+bottom: 25px;
+width: 30px;
+height: 30px;
+background: #e6a743;
+color: #222;
+border: none;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 21px;
+cursor: pointer;
+transition: 0.3s;
+padding: 0;
+}
+.mensagem .adicionar:hover {
+background: #d28b32;
+}
+
+.mensagem .enviar {
+position: absolute;
+right: 20px;
+bottom: 25px;
+width: 85px;
+height: 38px;
+background: #ff8500;
+border: none;
+border-radius: 8px;
+font-size: 20px;
+cursor: pointer;
+}
+
+footer {
+width: 100%;
+height: 90px;
+display: flex;
+border-top: 1px solid #ddd;
+}
+.redes, .email {
+width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.redes {
+gap: 35px;
+border-right: 1px solid #ddd;
+}
+.redes img {
+width: 32px;
+height: 32px;
+object-fit: contain;
+}
+.email {
+gap: 12px;
+color: #333;
+text-decoration: none;
+font-size: 15px;
+}
+
+@media (max-width: 768px) {
+header {
+height: auto;
+}
+.menu {
+top: 10px;
+right: 5px;
+left: 5px;
+justify-content: space-around;
+flex-wrap: wrap;
+gap: 3px;
+padding: 8px 5px;
+}
+.menu a {
+font-size: 11px;
+padding: 7px 5px;
+}
+.sobre {
+padding: 35px 5%;
+}
+.sobre-caixa {
+flex-direction: column;
+}
+.galeria {
+height: 250px;
+}
+.logos {
+flex-wrap: wrap;
+gap: 20px;
+}
+.logos img {
+width: 150px;
+}
+.depoimento-lista {
+flex-direction: column;
+align-items: center;
+}
+.depoimento {
+width: 100%;
+max-width: 400px;
+}
+.perguntas {
+padding: 40px 15px;
+}
+.perguntas details p {
+padding: 30px;
+}
+.contato {
+padding: 35px 5%;
+}
+footer {
+height: auto;
+min-height: 90px;
+}
+}
+
+
